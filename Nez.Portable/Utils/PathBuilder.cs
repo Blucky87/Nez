@@ -1,15 +1,6 @@
-﻿//namespace nez.portable.Utils
-//{
-//    public class Path
-//    {
-//        
-//    }
-//}
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Nez;
 
 namespace Nez
 {
@@ -474,119 +465,12 @@ namespace Nez
         }
 
         /// <summary>
-        /// Creates an open <see cref="GraphicsPath"/> from the path with a given <see cref="Pen"/>.
-        /// </summary>
-        /// <param name="pen">The pen to stroke the path with.</param>
-        /// <returns>A computed <see cref="GraphicsPath"/>.</returns>
-//        public GraphicsPath Stroke (Pen pen)
-//        {
-//            return Stroke(pen, PathType.Open);
-//        }
-
-        /// <summary>
-        /// Creates an open or closed <see cref="GraphicsPath"/> from the path with a given <see cref="Pen"/>.
-        /// </summary>
-        /// <param name="pen">The pen to stroke the path with.</param>
-        /// <param name="pathType">Whether the path is open or closed.</param>
-        /// <returns>A computed <see cref="GraphicsPath"/>.</returns>
-//        public GraphicsPath Stroke (Pen pen, PathType pathType)
-//        {
-//            return new GraphicsPath(pen, _geometryBuffer, _lengthBuffer, pathType, 0, _geometryIndex);
-//        }
-
-        /// <summary>
-        /// Creates an open <see cref="GraphicsPath"/> from a transformed copy of the path with a given <see cref="Pen"/>.
-        /// </summary>
-        /// <param name="pen">The pen to stroke the path with.</param>
-        /// <param name="transform">The transform matrix to apply to all of the points in the path.</param>
-        /// <returns>A computed <see cref="GraphicsPath"/>.</returns>
-//        public GraphicsPath Stroke (Pen pen, Matrix transform)
-//        {
-//            return Stroke(pen, transform, PathType.Open);
-//        }
-
-        /// <summary>
-        /// Creates an open or closed <see cref="GraphicsPath"/> from a transformed copy of the path with a given <see cref="Pen"/>.
-        /// </summary>
-        /// <param name="pen">The pen to stroke the path with.</param>
-        /// <param name="transform">The transform matrix to apply to all of the points in the path.</param>
-        /// <param name="pathType">Whether the path is open or closed.</param>
-        /// <returns>A computed <see cref="GraphicsPath"/>.</returns>
-//        public GraphicsPath Stroke (Pen pen, Matrix transform, PathType pathType)
-//        {
-//            Vector2[] buffer = new Vector2[_geometryIndex];
-//            for (int i = 0; i < _geometryIndex; i++)
-//                buffer[i] = Vector2.Transform(_geometryBuffer[i], transform);
-//
-//            return new GraphicsPath(pen, buffer, _lengthBuffer, pathType, 0, _geometryIndex);
-//        }
-
-        /// <summary>
         /// Resets the <see cref="PathBuilder"/> to empty.
         /// </summary>
         public void Reset ()
         {
             _geometryIndex = 0;
         }
-
-        /*public IList<IList<Vector2>> OutlinePathFromStroke (Pen pen, PathType pathType)
-        {
-            return OutlinePathFromClosedStroke(pen);
-        }
-
-        private IList<IList<Vector2>> OutlinePathFromClosedStroke (Pen pen)
-        {
-            int count = _geometryIndex;
-
-            int vertexCount = pen.MaximumVertexCount(count + 1);
-            Vector2[] insetBuffer = new Vector2[vertexCount - count];
-            Vector2[] outsetBuffer = new Vector2[vertexCount - count];
-
-            if (IsClose(_geometryBuffer[0], _geometryBuffer[count - 1]))
-                count--;
-
-            InsetOutsetCount vioCount = AddJoint(pen, _geometryBuffer[count - 1], _geometryBuffer[0], _geometryBuffer[1], insetBuffer, 0, outsetBuffer, 0);
-            int insetBufferIndex = vioCount.InsetCount;
-            int outsetBufferIndex = vioCount.OutsetCount;
-
-            for (int i = 0; i < count - 2; i++) {
-                vioCount = AddJoint(pen, _geometryBuffer[i], _geometryBuffer[i + 1], _geometryBuffer[i + 2], insetBuffer, insetBufferIndex, outsetBuffer, outsetBufferIndex);
-                insetBufferIndex += vioCount.InsetCount;
-                outsetBufferIndex += vioCount.OutsetCount;
-            }
-
-            vioCount = AddJoint(pen, _geometryBuffer[count - 2], _geometryBuffer[count - 1], _geometryBuffer[0], insetBuffer, insetBufferIndex, outsetBuffer, outsetBufferIndex);
-            insetBufferIndex += vioCount.InsetCount;
-            outsetBufferIndex += vioCount.OutsetCount;
-
-            return new List<IList<Vector2>> { insetBuffer, outsetBuffer };
-        }
-
-        private InsetOutsetCount AddJoint (Pen pen, Vector2 a, Vector2 b, Vector2 c, IList<Vector2> insetBuffer, int insetBufferIndex, IList<Vector2> outsetBuffer, int outsetBufferIndex)
-        {
-            InsetOutsetCount vioCount = new InsetOutsetCount();
-
-            switch (pen.LineJoin) {
-                case LineJoin.Miter:
-                    vioCount = pen.ComputeMiter(a, b, c);
-                    break;
-                case LineJoin.Bevel:
-                    vioCount = pen.ComputeBevel(a, b, c);
-                    break;
-            }
-
-            for (int i = 0; i < vioCount.InsetCount; i++)
-                insetBuffer[insetBufferIndex++] = pen.InsetResultBuffer[i];
-            for (int i = 0; i < vioCount.OutsetCount; i++)
-                outsetBuffer[outsetBufferIndex++] = pen.OutsetResultBuffer[i];
-
-            return vioCount;
-        }
-
-        private bool IsClose (Vector2 a, Vector2 b)
-        {
-            return Math.Abs(a.X - b.X) < 0.001 && Math.Abs(a.Y - b.Y) < 0.001;
-        }*/
 
         private void CheckBufferFreeSpace (int vertexCount)
         {
