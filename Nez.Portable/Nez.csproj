@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
   <PropertyGroup>
@@ -32,7 +32,7 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Debug\" />
+    <Folder Include="Debugger\" />
     <Folder Include="ECS\" />
     <Folder Include="Graphics\" />
     <Folder Include="Input\" />
@@ -82,9 +82,9 @@
     <Folder Include="AI\Pathfinding\BreadthFirst\" />
     <Folder Include="AI\Pathfinding\AStar\" />
     <Folder Include="Utils\Extensions\" />
-    <Folder Include="Debug\Inspector\" />
-    <Folder Include="Debug\Inspector\Attributes\" />
-    <Folder Include="Debug\Inspector\Inspectors\" />
+    <Folder Include="Debugger\Inspector\" />
+    <Folder Include="Debugger\Inspector\Attributes\" />
+    <Folder Include="Debugger\Inspector\Inspectors\" />
     <Folder Include="UI\Utils\" />
     <Folder Include="Content\" />
     <Folder Include="Utils\Audio\" />
@@ -98,7 +98,7 @@
     <Folder Include="ECS\Components\Renderables\PolygonLight\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Debug\Debug.cs" />
+    <Compile Include="Debugger\Debug.cs" />
     <Compile Include="ECS\Camera.cs" />
     <Compile Include="ECS\Component.cs" />
     <Compile Include="ECS\Entity.cs" />
@@ -169,7 +169,7 @@
     <Compile Include="ECS\Components\Renderables\Sprites\SpriteAnimation.cs" />
     <Compile Include="Physics\RaycastHit.cs" />
     <Compile Include="Math\Flags.cs" />
-    <Compile Include="Debug\DebugDrawItem.cs" />
+    <Compile Include="Debugger\DebugDrawItem.cs" />
     <Compile Include="Math\Random.cs" />
     <Compile Include="ECS\Components\FollowCamera.cs" />
     <Compile Include="Graphics\Textures\Subtexture.cs" />
@@ -210,7 +210,7 @@
     <Compile Include="Physics\Shapes\Polygon.cs" />
     <Compile Include="Physics\Shapes\Circle.cs" />
     <Compile Include="Physics\Shapes\Box.cs" />
-    <Compile Include="Debug\Assert.cs" />
+    <Compile Include="Debugger\Assert.cs" />
     <Compile Include="Physics\Shapes\RealtimeCollisions.cs" />
     <Compile Include="Utils\Triangulator.cs" />
     <Compile Include="ECS\Systems\PassiveSystem.cs" />
@@ -446,20 +446,20 @@
     <Compile Include="Utils\Extensions\SpriteBatchExt.cs" />
     <Compile Include="Utils\Extensions\KeysExt.cs" />
     <Compile Include="Utils\Extensions\FloatExt.cs" />
-    <Compile Include="Debug\Inspector\RuntimeInspector.cs" />
-    <Compile Include="Debug\Inspector\Attributes\InspectableAttribute.cs" />
-    <Compile Include="Debug\Inspector\Attributes\RangeAttribute.cs" />
-    <Compile Include="Debug\Inspector\Inspectors\BoolInspector.cs" />
-    <Compile Include="Debug\Inspector\Inspectors\FloatInspector.cs" />
-    <Compile Include="Debug\Inspector\Inspectors\Inspector.cs" />
-    <Compile Include="Debug\Inspector\Inspectors\IntInspector.cs" />
-    <Compile Include="Debug\Inspector\Inspectors\StringInspector.cs" />
-    <Compile Include="Debug\Inspector\Inspectors\Vector2Inspector.cs" />
-    <Compile Include="Debug\Inspector\Attributes\CustomInspectorAttribute.cs" />
-    <Compile Include="Debug\Inspector\Attributes\InspectorCallableAttribute.cs" />
-    <Compile Include="Debug\Inspector\Inspectors\MethodInspector.cs" />
-    <Compile Include="Debug\Inspector\Inspectors\ColorInspector.cs" />
-    <Compile Include="Debug\Inspector\Inspectors\EffectInspector.cs" />
+    <Compile Include="Debugger\Inspector\RuntimeInspector.cs" />
+    <Compile Include="Debugger\Inspector\Attributes\InspectableAttribute.cs" />
+    <Compile Include="Debugger\Inspector\Attributes\RangeAttribute.cs" />
+    <Compile Include="Debugger\Inspector\Inspectors\BoolInspector.cs" />
+    <Compile Include="Debugger\Inspector\Inspectors\FloatInspector.cs" />
+    <Compile Include="Debugger\Inspector\Inspectors\Inspector.cs" />
+    <Compile Include="Debugger\Inspector\Inspectors\IntInspector.cs" />
+    <Compile Include="Debugger\Inspector\Inspectors\StringInspector.cs" />
+    <Compile Include="Debugger\Inspector\Inspectors\Vector2Inspector.cs" />
+    <Compile Include="Debugger\Inspector\Attributes\CustomInspectorAttribute.cs" />
+    <Compile Include="Debugger\Inspector\Attributes\InspectorCallableAttribute.cs" />
+    <Compile Include="Debugger\Inspector\Inspectors\MethodInspector.cs" />
+    <Compile Include="Debugger\Inspector\Inspectors\ColorInspector.cs" />
+    <Compile Include="Debugger\Inspector\Inspectors\EffectInspector.cs" />
     <Compile Include="UI\Containers\ScrollPane.cs" />
     <Compile Include="Graphics\ScissorStack.cs" />
     <Compile Include="UI\Widgets\ListBox.cs" />
@@ -470,11 +470,11 @@
     <Compile Include="UI\Widgets\Tooltip.cs" />
     <Compile Include="UI\Utils\TooltipManager.cs" />
     <Compile Include="UI\Widgets\TextTooltip.cs" />
-    <Compile Include="Debug\Inspector\Attributes\TooltipAttribute.cs" />
-    <Compile Include="Debug\Inspector\Inspectors\EnumInspector.cs" />
-    <Compile Include="Debug\Inspector\Inspectors\StructInspector.cs" />
+    <Compile Include="Debugger\Inspector\Attributes\TooltipAttribute.cs" />
+    <Compile Include="Debugger\Inspector\Inspectors\EnumInspector.cs" />
+    <Compile Include="Debugger\Inspector\Inspectors\StructInspector.cs" />
     <Compile Include="Utils\Extensions\ComponentExt.cs" />
-    <Compile Include="Debug\Inspector\InspectorList.cs" />
+    <Compile Include="Debugger\Inspector\InspectorList.cs" />
     <Compile Include="Input\TouchInput.cs" />
     <Compile Include="Utils\IUpdatableManager.cs" />
     <Compile Include="Utils\Collections\FastList.cs" />
@@ -523,7 +523,7 @@
     <Compile Include="Physics\Shapes\ShapeCollisions\ShapeCollisionsCircle.cs" />
     <Compile Include="Physics\Shapes\ShapeCollisions\ShapeCollisionsLine.cs" />
     <Compile Include="Physics\Shapes\ShapeCollisions\ShapeCollisionsPoint.cs" />
-    <Compile Include="Debug\DebugDefaults.cs" />
+    <Compile Include="Debugger\DebugDefaults.cs" />
     <Compile Include="UI\IMGUI.cs" />
     <Compile Include="Physics\Verlet\Composites\Box.cs" />
     <Compile Include="Physics\Verlet\Composites\Ragdoll.cs" />
