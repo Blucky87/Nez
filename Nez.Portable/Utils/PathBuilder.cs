@@ -217,10 +217,7 @@ namespace Nez
 
         public void AddLine(Vector2 start, Vector2 end)
         {
-            CheckBufferFreeSpace(2);
-
-            _geometryBuffer[_geometryIndex++] = start;
-            _geometryBuffer[_geometryIndex++] = end;
+            AddPath(new []{start, end});
         }
 
         /// <summary>
